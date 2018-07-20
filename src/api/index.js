@@ -28,10 +28,10 @@ export default ({ config, db }) => {
 				let serviceUrl = req.body.originalDetectIntentRequest.payload.address.serviceUrl;
 				let address = {id, channelId, user, conversation, botDetails, serviceUrl};
 				var msg = new builder.Message().address(address);
-				msg.text('pushed message');
+				msg.text('Don\'t push so hard.');
 				msg.textLocale('en-US');
 				bot.send(msg);
-				return res.json({'fulfillmentText':'test output'});
+				return res.json({'fulfillmentText':'Why do you wanna push me? Is it because my jokes are lame?'});
 				break;
 			case 'dog.get':
 				return res.json({'fulfillmentMessages': [
@@ -49,7 +49,7 @@ export default ({ config, db }) => {
 				return res.json({'fulfillmentMessages': [
 					{
 						'quickReplies': {
-							'title': 'Here are some things you can do with this bot:',
+							'title': 'Want some jokes? Or maybe some dogs? Or maybe a little shove?',
 							'quickReplies': [
 								'tell me a joke',
 								'dog',
