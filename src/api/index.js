@@ -17,9 +17,9 @@ export default ({ config, db }) => {
 	// mount the facets resource
 	api.use('/facets', facets({ config, db }));
 
-	api.post('/SkypeChatbot', (req, res) => {
+	api.post('/sendMessage', (req, res) => {
 		switch (req.body.queryResult.action) {
-			case 'proactive.message':
+			case 'push.message':
 				let channelId = 'skype';
 				let id = req.body.originalDetectIntentRequest.payload.address.id;
 				var user = req.body.originalDetectIntentRequest.payload.address.user;
